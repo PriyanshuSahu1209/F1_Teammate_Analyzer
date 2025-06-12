@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>F1 Teammate Analysis</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Formula 1 teammate comparison app" name="description" />
+    <link
+      href="{{ url_for('static', filename='img/favicon.ico') }}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+    <style>
+      .hero-banner {
+        background: url("{{ url_for('static', filename='img/banner.jpg') }}") center center / cover no-repeat;
+      }
+    </style>
+  </head>
+  <script src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+      <nav
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5"
+      >
+        <a href="/" class="navbar-brand d-flex align-items-center">
+          <img
+            src="{{ url_for('static', filename='img/f1_logo.png') }}"
+            alt="F1 Logo"
+            style="height: 36px; width: auto"
+            class="mr-2"
+          />
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+          <div class="navbar-nav m-auto py-0">
+            <a
+              href="/"
+              class="nav-item nav-link {% if request.path == '/' %}active{% endif %}"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="nav-item nav-link {% if request.path == '/about' %}active{% endif %}"
+              >About</a
+            >
+            <a
+              href="/contact"
+              class="nav-item nav-link {% if request.path == '/contact' %}active{% endif %}"
+              >Contact</a
+            >
+          </div>
+          <div class="d-none d-lg-flex align-items-center">
+            <span
+              class="text-primary"
+              style="font-family: 'Audiowide', cursive; font-size: 1.2rem"
+              >Teammate Analyzer</span
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="position-relative">
+      <div
+        class="jumbotron jumbotron-fluid mb-5 hero-banner"
+      >
+        <div class="container text-center py-5 position-relative">
+          <h1 class="text-primary mb-4" style="font-family: f1-Torque;">Formula 1</h1>
+          <h1 class="text-white display-3 mb-5 fw-bold" style="font-family: f1-Turbo;">Teammate Comparison</h1>
+          <form method="POST" action="/analyze">
+            <div class="mx-auto" style="width: 100%; max-width: 600px">
+              <div class="input-group">
+                <input
+                  id="driver-input"
+                  list="driver-suggestions"
+                  name="driverName"
+                  class="form-control form-control-lg border-light"
+                  style="padding: 30px"
+                  placeholder="Enter Driver Name"
+                  required
+                />
+                <datalist id="driver-suggestions"></datalist>
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary px-4">
+                    Compare
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="header-overlay"></div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3 mt-5">
+      <div class="container text-center">
+        <small>&copy; 2025 F1 Teammate Analyzer. All rights reserved.</small>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

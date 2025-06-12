@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>About - F1 Teammate Analyzer</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="{{ url_for('static', filename='img/favicon.ico') }}"
+      rel="icon"
+    />
+    <link
+      href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+  </head>
+
+  <body>
+   <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+      <nav
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5"
+      >
+        <a href="/" class="navbar-brand d-flex align-items-center">
+          <img
+            src="{{ url_for('static', filename='img/f1_logo.png') }}"
+            alt="F1 Logo"
+            style="height: 36px; width: auto"
+            class="mr-2"
+          />
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+          <div class="navbar-nav m-auto py-0">
+            <a
+              href="/"
+              class="nav-item nav-link {% if request.path == '/' %}active{% endif %}"
+              >Home</a
+            >
+            <a
+              href="/about"
+              class="nav-item nav-link {% if request.path == '/about' %}active{% endif %}"
+              >About</a
+            >
+            <a
+              href="/contact"
+              class="nav-item nav-link {% if request.path == '/contact' %}active{% endif %}"
+              >Contact</a
+            >
+          </div>
+          <div class="d-none d-lg-flex align-items-center">
+            <span
+              class="text-primary"
+              style="font-family: 'Audiowide', cursive; font-size: 1.2rem"
+              >Teammate Analyzer</span
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- About Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="mb-4">About This Project</h2>
+        <p>
+          This web app analyzes head-to-head race performance between a Formula
+          1 driver and all their teammates throughout their career. It uses
+          historical F1 race data and summarizes which teammates performed most
+          competitively, based on:
+        </p>
+        <ul>
+          <li>Percentage of races where the teammate finished ahead</li>
+          <li>Total points scored by each driver</li>
+          <li>Average finishing position across shared races</li>
+        </ul>
+
+        <h3 class="mt-5">Technologies Used</h3>
+        <ul>
+          <li><strong>Python + Flask</strong> – Backend and routing</li>
+          <li>
+            <strong>Pandas + Plotly</strong> – Data analysis and visualizations
+          </li>
+          <li>
+            <strong>HTML + Bootstrap 5</strong> – Responsive UI (based on Faster
+            Theme)
+          </li>
+          <li>
+            <strong>CSV Dataset</strong> – From Kaggle (F1 historical race
+            results)
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3 mt-5">
+      <div class="container text-center">
+        <small>&copy; 2025 F1 Teammate Analyzer. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
