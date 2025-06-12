@@ -43,4 +43,20 @@ The dataset was cleaned and merged using a custom Jupyter Notebook. The 2025 dat
 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/f1-teammate-analyzer.git
-cd f1-teammate-analyzer
+cd f1-teammate-analyzer 
+```
+
+2. Install required packages
+```bash
+pip install -r requirements.txt
+```
+
+3. Place the dataset .csv files inside a folder named datasets/
+
+4.Run the Flask app
+
+```bash
+python app.py
+```
+
+5. Open your browser and go to http://127.0.0.1:5000/
