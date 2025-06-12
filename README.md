@@ -43,7 +43,7 @@ The dataset was cleaned and merged using a custom Jupyter Notebook. The 2025 dat
 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/f1-teammate-analyzer.git
-cd f1-teammate-analyzer 
+cd f1-teammate-analyzer
 ```
 
 2. Install required packages
@@ -53,10 +53,58 @@ pip install -r requirements.txt
 
 3. Place the dataset .csv files inside a folder named datasets/
 
-4.Run the Flask app
-
+4. Run the Flask app
 ```bash
 python app.py
 ```
 
 5. Open your browser and go to http://127.0.0.1:5000/
+
+---
+
+## 🖼️ Project Preview
+
+![Search Example](static/img/demo-search.png)  
+![Results Example](static/img/demo-results.png)
+
+---
+
+## 📁 Folder Structure
+
+```
+.
+├── analysis.py
+├── app.py
+├── datasets/
+│   ├── drivers.csv
+│   ├── results.csv
+│   └── ...
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── img/
+├── templates/
+│   ├── index.html
+│   ├── result.html
+│   ├── about.html
+│   └── contact.html
+└── README.md
+```
+
+---
+
+## ✅ Future Improvements
+
+- Add qualifying comparisons
+- Track constructor influence over time
+- Incorporate badges/logos
+- Real-time data updates during active season
+- Deploy via Render or Railway
+
+---
+
+## 📬 Contact
+
+Made by Priyanshu Sahu  
+Shri Shankaracharya Institute of Professional Management & Technology, Raipur  
+Feel free to reach out via LinkedIn or GitHub!
