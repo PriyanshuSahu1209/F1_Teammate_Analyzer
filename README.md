@@ -32,7 +32,7 @@ Key features:
 
 - Base dataset: [Kaggle Formula 1 World Championship 1950–2021](https://www.kaggle.com/rohanrao/formula-1-world-championship-1950-2020)
 - 2025 Season Extension: Manually scraped from [Formula1.com](https://www.formula1.com)
-- Total: 13+ .csv files, including results.csv, drivers.csv, races.csv, pit_stops.csv, qualifying.csv, etc.
+- Total: 4 .csv files, including results.csv, drivers.csv, races.csv and constructors.csv
 
 The dataset was cleaned and merged using a custom Jupyter Notebook. The 2025 data was manually added up to the Spanish Grand Prix.
 
