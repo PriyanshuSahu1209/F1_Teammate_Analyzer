@@ -1,5 +1,6 @@
-streamlit
+Flask
 pandas
 numpy
 plotly
 requests
+gunicorn
