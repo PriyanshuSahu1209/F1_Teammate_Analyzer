@@ -94,7 +94,8 @@ def plot_teammate_comparison_plotly_separate(driver_id, df, drivers_df):
         height=400,
         plot_bgcolor="#fff",
         paper_bgcolor="#fff",
-        margin=dict(l=40, r=30, t=50, b=40)
+        margin=dict(l=40, r=30, t=50, b=40),
+        legend=dict(orientation="h", x=0.5, xanchor="center", y=-0.2)
     )
     plots["Races & Wins"] = fig1.to_html(full_html=False)
 
@@ -108,7 +109,8 @@ def plot_teammate_comparison_plotly_separate(driver_id, df, drivers_df):
         height=400,
         plot_bgcolor="#fff",
         paper_bgcolor="#fff",
-        margin=dict(l=40, r=30, t=50, b=40)
+        margin=dict(l=40, r=30, t=50, b=40),
+        legend=dict(orientation="h", x=0.5, xanchor="center", y=-0.2)
     )
     plots["Avg Position"] = fig2.to_html(full_html=False)
 
@@ -122,7 +124,8 @@ def plot_teammate_comparison_plotly_separate(driver_id, df, drivers_df):
         height=400,
         plot_bgcolor="#fff",
         paper_bgcolor="#fff",
-        margin=dict(l=40, r=30, t=50, b=40)
+        margin=dict(l=40, r=30, t=50, b=40),
+        legend=dict(orientation="h", x=0.5, xanchor="center", y=-0.2)
     )
     plots["Points"] = fig3.to_html(full_html=False)
 
