@@ -17,6 +17,15 @@ Key features:
 
 ---
 
+## :sparkles: AI-Generated Performance Summary
+
+This project features an automated **AI-generated summary** that uses **rule-based natural language generation (NLG)** to describe how a driver performed against their teammates. It dynamically adapts the phrasing based on win records, teammate counts, and consistency — producing insights similar to those a human analyst might write.
+
+> *Example:*
+> “Carlos Sainz raced alongside 3 teammates in 47 races and was beaten in 22 of them. The strongest teammate was Charles Leclerc, who beat him 14 times. The weakest was Sebastian Vettel, who never managed to beat him.”
+
+---
+
 ## 📊 Technologies Used
 
 - Python
