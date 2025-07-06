@@ -73,8 +73,8 @@ python app.py
 
 ## 🖼️ Project Preview
 
-![Search Example](static/img/search_example)  
-![Results Example](static/img/results_example)
+![Search Example](static/img/search_example.png)  
+![Results Example](static/img/results_example.png)
 
 ---
 
