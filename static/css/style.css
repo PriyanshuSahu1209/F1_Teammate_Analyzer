@@ -1100,3 +1100,25 @@ p {
   font-family: 'F1-Turbo', sans-serif;
 }
 
+.card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-family: 'F1-Turbo', sans-serif;
+  color: #ff3e41;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}

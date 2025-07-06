@@ -48,10 +48,10 @@ def analyze_driver_teammates(driver_id, results_df, drivers_df):
                 'Teammate Name': name,
                 'Races Together': len(driver_positions),
                 'Times Teammate Beat Driver': beat_count,
-                'Total Teammate Points': teammate_points,
-                f'Total Max Points': driver_points,
+                'Total Max Points': driver_points,
                 'Avg Teammate Pos': round(sum(teammate_positions)/len(teammate_positions), 2),
-                f'Avg Max Pos': round(sum(driver_positions)/len(driver_positions), 2),
+                'Avg Max Pos': round(sum(driver_positions)/len(driver_positions), 2),
+                'Total Teammate Points': teammate_points,
                 '% Races Teammate Beat Driver': round(100 * beat_count / len(driver_positions), 2)
             })
 
@@ -61,13 +61,15 @@ def analyze_driver_teammates(driver_id, results_df, drivers_df):
     driver_row = drivers_df[drivers_df['driverId'] == driver_id].iloc[0]
     driver_name = f"{driver_row['forename']} {driver_row['surname']}"
     df.rename(columns={
-        f'Total Max Points': f'Total {driver_name} Points',
-        f'Avg Max Pos': f'Avg {driver_name} Pos'
+        'Total Max Points': f'Total {driver_name} Points',
+        'Avg Max Pos': f'Avg {driver_name} Pos',
+        'Times Teammate Beat Driver': f'Times Teammate Beat {driver_name}',
+        '% Races Teammate Beat Driver': f'% Races Teammate Beat {driver_name}'
     }, inplace=True)
 
     df = df.groupby("Teammate Name", as_index=False).mean(numeric_only=True)
     df["Races Together"] = df["Races Together"].round().astype(int)
-    df["Times Teammate Beat Driver"] = df["Times Teammate Beat Driver"].round().astype(int)
+    df[f"Times Teammate Beat {driver_name}"] = df[f"Times Teammate Beat {driver_name}"].round().astype(int)
     df = df.sort_values("Races Together", ascending=False)
     return df
 
@@ -86,7 +88,7 @@ def plot_teammate_comparison_plotly_separate(driver_id, df, drivers_df):
 
     # 1. % Races Teammate Beat
     fig1 = go.Figure()
-    fig1.add_trace(go.Bar(x=teammates, y=df["% Races Teammate Beat Driver"], marker_color=colors["deep"]))
+    fig1.add_trace(go.Bar(x=teammates, y=df[f"% Races Teammate Beat {driver_name}"], marker_color=colors["deep"]))
     fig1.update_layout(
         title=f"% Races Teammate Beat {driver_name}",
         height=400,
